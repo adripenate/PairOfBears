@@ -5,11 +5,12 @@ class FindPairs:
 
     @classmethod
     def ofBears(cls, param):
+        output = ""
         for position in range(1, len(param)):
             target = param[position-1] + param[position]
             if target == "8B" or target == "B8":
-                return target
-        return ""
+                output += target
+        return output
 
 
 class FindPairsTest(unittest.TestCase):
