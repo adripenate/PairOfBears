@@ -7,7 +7,7 @@ PAIR_TYPE_2 = "B8"
 class FindPairs:
 
     @classmethod
-    def ofBears(cls, bears):
+    def ofBears(cls, num, bears):
         pairs = ""
         position = 1
         while position < len(bears):
@@ -16,28 +16,28 @@ class FindPairs:
                 pairs += target
                 position += 1
             position += 1
-        return pairs
+        return [pairs, num <= (len(pairs)/2)]
 
 
 class FindPairsTest(unittest.TestCase):
 
     def test_should_not_find_pairs(self):
-        self.assertEqual("", FindPairs.ofBears("a"))
+        self.assertEqual(["", True], FindPairs.ofBears(0, "a"))
 
     def test_should_find_pair_8B(self):
-        self.assertEqual("8B", FindPairs.ofBears("8B"))
+        self.assertEqual(["8B", False], FindPairs.ofBears(3, "8B"))
 
     def test_should_find_pair_B8(self):
-        self.assertEqual("B8", FindPairs.ofBears("B8"))
+        self.assertEqual(["B8", True], FindPairs.ofBears(1, "B8"))
 
     def test_should_find_pair_8B_in_long_chains(self):
-        self.assertEqual("8B", FindPairs.ofBears("a28Bsdf3w"))
+        self.assertEqual(["8B", False], FindPairs.ofBears(3, "a28Bsdf3w"))
 
     def test_should_find_multiple_pairs(self):
-        self.assertEqual("8BB8", FindPairs.ofBears("a2Bs8BdB8f3w"))
+        self.assertEqual(["8BB8", False], FindPairs.ofBears(5, "a2Bs8BdB8f3w"))
 
     def test_should_not_find_more_than_one_pair(self):
-        self.assertEqual("B8", FindPairs.ofBears("a2BsB8Bdf3w"))
+        self.assertEqual(["B8", True], FindPairs.ofBears(1, "a2BsB8Bdf3w"))
 
 
 if __name__ == '__main__':
