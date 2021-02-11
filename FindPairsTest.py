@@ -26,6 +26,9 @@ class FindPairsTest(unittest.TestCase):
     def test_should_find_pair_8B_in_long_chains(self):
         self.assertEqual("8B", FindPairs.ofBears("a28Bsdf3w"))
 
+    def test_should_find_multiple_pairs(self):
+        self.assertEqual("8BB8", FindPairs.ofBears("a2Bs8BdB8f3w"))
+
 
 if __name__ == '__main__':
     unittest.main()
