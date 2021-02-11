@@ -33,6 +33,9 @@ class FindPairsTest(unittest.TestCase):
     def test_should_find_multiple_pairs(self):
         self.assertEqual("8BB8", FindPairs.ofBears("a2Bs8BdB8f3w"))
 
+    def test_should_not_find_more_than_one_pair(self):
+        self.assertEqual("B8", FindPairs.ofBears("a2BsB8Bdf3w"))
+
 
 if __name__ == '__main__':
     unittest.main()
