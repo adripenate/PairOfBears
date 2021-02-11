@@ -7,10 +7,8 @@ class FindPairs:
     def ofBears(cls, param):
         for position in range(1, len(param)):
             target = param[position-1] + param[position]
-            if target == "8B":
-                return "8B"
-            if target == "B8":
-                return "B8"
+            if target == "8B" or target == "B8":
+                return target
         return ""
 
 
