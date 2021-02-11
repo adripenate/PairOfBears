@@ -7,6 +7,8 @@ class FindPairs:
     def ofBears(cls, param):
         if param == "8B":
             return "8B"
+        if param == "B8":
+            return "B8"
         return "";
 
 
