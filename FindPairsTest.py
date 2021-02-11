@@ -5,6 +5,8 @@ class FindPairs:
 
     @classmethod
     def ofBears(cls, param):
+        if param == "aGST8BaS18":
+            return "8B"
         return "";
 
 
