@@ -5,7 +5,7 @@ class FindPairs:
 
     @classmethod
     def ofBears(cls, param):
-        pass
+        return "";
 
 
 class FindPairsTest(unittest.TestCase):
