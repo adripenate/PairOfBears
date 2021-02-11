@@ -1,16 +1,19 @@
 import unittest
 
+PAIR_TYPE_1 = "8B"
+PAIR_TYPE_2 = "B8"
+
 
 class FindPairs:
 
     @classmethod
-    def ofBears(cls, param):
-        output = ""
-        for position in range(1, len(param)):
-            target = param[position-1] + param[position]
-            if target == "8B" or target == "B8":
-                output += target
-        return output
+    def ofBears(cls, bears):
+        pairs = ""
+        for position in range(1, len(bears)):
+            target = bears[position - 1] + bears[position]
+            if target == PAIR_TYPE_1 or target == PAIR_TYPE_2:
+                pairs += target
+        return pairs
 
 
 class FindPairsTest(unittest.TestCase):
