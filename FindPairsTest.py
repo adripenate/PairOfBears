@@ -9,10 +9,13 @@ class FindPairs:
     @classmethod
     def ofBears(cls, bears):
         pairs = ""
-        for position in range(1, len(bears)):
+        position = 1
+        while position < len(bears):
             target = bears[position - 1] + bears[position]
             if target == PAIR_TYPE_1 or target == PAIR_TYPE_2:
                 pairs += target
+                position += 1
+            position += 1
         return pairs
 
 
